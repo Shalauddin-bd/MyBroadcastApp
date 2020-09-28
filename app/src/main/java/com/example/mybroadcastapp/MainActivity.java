@@ -25,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
         if(getIntent() != null)
         {
             Log.i("Main Activity","SMS received!");
-            textViewSms.setText(smsIntent.getStringExtra("data"));
+            String sms = smsIntent.getStringExtra("data");
+            if(sms != null){
+                textViewSms.setText(sms);
+            }
         }
     }
 
